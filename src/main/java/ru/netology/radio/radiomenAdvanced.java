@@ -104,6 +104,21 @@ public class radiomenAdvanced {
     public void setOn(boolean on) {
         this.on = on;
     }
+    public void setNextVolume() {
+        int nextVolume = currentVolume + 1;
+        if (nextVolume > maxVolume) {
+            this.currentVolume = minVolume;
+        } else
+            this.currentVolume = nextVolume;
+    }
+
+    public void setPreviousVolume() {
+        int previousVolume = currentVolume - 1;
+        if (previousVolume < minVolume) {
+            this.currentVolume = maxStation;
+        } else
+            this.currentVolume = previousVolume;
+    }
 }
 
 
