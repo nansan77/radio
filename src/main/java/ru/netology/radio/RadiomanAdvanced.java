@@ -1,6 +1,6 @@
 package ru.netology.radio;
 
-public class radiomenAdvanced {
+public class RadiomanAdvanced {
     private String Station;
     private int maxStation;
     private int minStation;
@@ -41,14 +41,9 @@ public class radiomenAdvanced {
     }
 
     public void setCurrentStation(int currentStation) {
-        if (currentStation < minStation){
-            return;
-    }
-        if (currentStation > maxStation){
-            return;
-        }
         this.currentStation = currentStation;
     }
+
     public void setNextStation() {
         int nextStation = currentStation + 1;
         if (nextStation > maxStation) {
@@ -104,6 +99,7 @@ public class radiomenAdvanced {
     public void setOn(boolean on) {
         this.on = on;
     }
+
     public void setNextVolume() {
         int nextVolume = currentVolume + 1;
         if (nextVolume > maxVolume) {
@@ -120,5 +116,3 @@ public class radiomenAdvanced {
             this.currentVolume = previousVolume;
     }
 }
-
-
