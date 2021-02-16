@@ -3,25 +3,17 @@ package ru.netology.radio;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
+
 
 public class RadiomanAdvancedTest {
-    @Test
-    public void shouldStation() {
-        RadiomanAdvanced radiomenAdvanced = new RadiomanAdvanced();
-        String expected = "radioman";
-        assertNull(radiomenAdvanced.getStation());
-        radiomenAdvanced.setStation(expected);
-        assertEquals(expected, radiomenAdvanced.getStation());
-    }
 
     @Test
     public void setCurrentStation() {
         RadiomanAdvanced radiomenAdvanced = new RadiomanAdvanced();
-        radiomenAdvanced.setMaxStation(20);
+        radiomenAdvanced.setMaxStation(10);
         radiomenAdvanced.setMinStation(0);
-        radiomenAdvanced.setCurrentStation(5);
-        assertEquals(5, radiomenAdvanced.getCurrentStation());
+        radiomenAdvanced.setCurrentStation(11);
+        assertEquals(0, radiomenAdvanced.getCurrentStation());
     }
 
     @Test
@@ -38,17 +30,17 @@ public class RadiomanAdvancedTest {
         RadiomanAdvanced radiomenAdvanced = new RadiomanAdvanced();
         radiomenAdvanced.setMaxStation(2);
         radiomenAdvanced.setMinStation(9);
-        radiomenAdvanced.setCurrentStation(4);
-        assertEquals(4, radiomenAdvanced.getCurrentStation());
+        radiomenAdvanced.setCurrentStation(-2);
+        assertEquals(0, radiomenAdvanced.getCurrentStation());
     }
 
     @Test
     public void setCurrentStation4() {
         RadiomanAdvanced radiomenAdvanced = new RadiomanAdvanced();
-        radiomenAdvanced.setMaxStation(2);
+        radiomenAdvanced.setMaxStation(10);
         radiomenAdvanced.setMinStation(0);
-        radiomenAdvanced.setCurrentStation(2);
-        assertEquals(2, radiomenAdvanced.getCurrentStation());
+        radiomenAdvanced.setCurrentStation(1);
+        assertEquals(1, radiomenAdvanced.getCurrentStation());
     }
 
     @Test
@@ -76,19 +68,19 @@ public class RadiomanAdvancedTest {
         RadiomanAdvanced radiomenAdvanced = new RadiomanAdvanced();
         radiomenAdvanced.setMaxStation(2);
         radiomenAdvanced.setMinStation(-1);
-        radiomenAdvanced.setCurrentStation(0);
+        radiomenAdvanced.setCurrentStation(9);
         radiomenAdvanced.setNextStation();
-        assertEquals(1, radiomenAdvanced.getCurrentStation());
+        assertEquals(9, radiomenAdvanced.getCurrentStation());
     }
 
     @Test
     public void setPreviousStation() {
         RadiomanAdvanced radiomenAdvanced = new RadiomanAdvanced();
-        radiomenAdvanced.setMaxStation(2);
-        radiomenAdvanced.setMinStation(-1);
+        radiomenAdvanced.setMaxStation(9);
+        radiomenAdvanced.setMinStation(0);
         radiomenAdvanced.setCurrentStation(0);
         radiomenAdvanced.setPreviousStation();
-        assertEquals(-1, radiomenAdvanced.getCurrentStation());
+        assertEquals(0, radiomenAdvanced.getCurrentStation());
     }
 
     @Test
@@ -111,32 +103,22 @@ public class RadiomanAdvancedTest {
         assertEquals(2, radiomenAdvanced.getCurrentStation());
     }
 
-
-    @Test
-    public void shouldVolume() {
-        RadiomanAdvanced radiomenAdvanced = new RadiomanAdvanced();
-        String expected = "radioman";
-        assertNull(radiomenAdvanced.getVolume());
-        radiomenAdvanced.setVolume(expected);
-        assertEquals(expected, radiomenAdvanced.getVolume());
-    }
-
     @Test
     public void setCurrentVolume() {
         RadiomanAdvanced radiomenAdvanced = new RadiomanAdvanced();
         radiomenAdvanced.setMaxVolume(10);
         radiomenAdvanced.setMinVolume(0);
-        radiomenAdvanced.setCurrentStation(3);
+        radiomenAdvanced.setCurrentVolume(17);
         assertEquals(0, radiomenAdvanced.getCurrentVolume());
     }
 
     @Test
     public void setCurrentVolume2() {
         RadiomanAdvanced radiomenAdvanced = new RadiomanAdvanced();
-        radiomenAdvanced.setMaxVolume(2);
+        radiomenAdvanced.setMaxVolume(10);
         radiomenAdvanced.setMinVolume(0);
-        radiomenAdvanced.setCurrentStation(8);
-        assertEquals(0, radiomenAdvanced.getCurrentVolume());
+        radiomenAdvanced.setCurrentVolume(8);
+        assertEquals(8, radiomenAdvanced.getCurrentVolume());
     }
 
     @Test
@@ -144,18 +126,18 @@ public class RadiomanAdvancedTest {
         RadiomanAdvanced radiomenAdvanced = new RadiomanAdvanced();
         radiomenAdvanced.setMaxVolume(1);
         radiomenAdvanced.setMinVolume(0);
-        radiomenAdvanced.setCurrentStation(1);
+        radiomenAdvanced.setCurrentVolume(20);
         assertEquals(0, radiomenAdvanced.getCurrentVolume());
     }
 
     @Test
     public void setNextVolume() {
         RadiomanAdvanced radiomenAdvanced = new RadiomanAdvanced();
-        radiomenAdvanced.setMaxVolume(4);
+        radiomenAdvanced.setMaxVolume(10);
         radiomenAdvanced.setMinVolume(0);
-        radiomenAdvanced.setCurrentVolume(9);
+        radiomenAdvanced.setCurrentVolume(10);
         radiomenAdvanced.setNextVolume();
-        assertEquals(0, radiomenAdvanced.getCurrentVolume());
+        assertEquals(10, radiomenAdvanced.getCurrentVolume());
     }
 
     @Test
@@ -188,5 +170,15 @@ public class RadiomanAdvancedTest {
         assertEquals(6, radiomenAdvanced.getCurrentVolume());
     }
 
+    @Test
+    public void setPreviousVolume2() {
+        RadiomanAdvanced radiomenAdvanced = new RadiomanAdvanced();
+        radiomenAdvanced.setMaxVolume(10);
+        radiomenAdvanced.setMinVolume(0);
+        radiomenAdvanced.setCurrentVolume(0);
+        radiomenAdvanced.setPreviousVolume();
+        assertEquals(0, radiomenAdvanced.getCurrentVolume());
+
+    }
 }
 
