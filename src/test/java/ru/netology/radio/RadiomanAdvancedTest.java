@@ -20,7 +20,7 @@ public class RadiomanAdvancedTest {
     public void setCurrentStation2() {
         RadiomanAdvanced radiomenAdvanced = new RadiomanAdvanced();
         radiomenAdvanced.setMaxStation(9);
-        radiomenAdvanced.setMinStation(7);
+        radiomenAdvanced.setMinStation(0);
         radiomenAdvanced.setCurrentStation(8);
         assertEquals(8, radiomenAdvanced.getCurrentStation());
     }
@@ -28,8 +28,8 @@ public class RadiomanAdvancedTest {
     @Test
     public void setCurrentStation3() {
         RadiomanAdvanced radiomenAdvanced = new RadiomanAdvanced();
-        radiomenAdvanced.setMaxStation(2);
-        radiomenAdvanced.setMinStation(9);
+        radiomenAdvanced.setMaxStation(9);
+        radiomenAdvanced.setMinStation(0);
         radiomenAdvanced.setCurrentStation(-2);
         assertEquals(0, radiomenAdvanced.getCurrentStation());
     }

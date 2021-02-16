@@ -9,7 +9,7 @@ public class RadiomanAdvanced {
     private int maxVolume;
     private int minVolume;
     private int currentVolume;
-    private boolean on;
+
 
     public int getMaxStation() {
         return maxStation;
@@ -35,7 +35,6 @@ public class RadiomanAdvanced {
         if (currentStation > maxStation) {
             return;
         }
-
         if (currentStation < minStation) {
             return;
         }
@@ -57,7 +56,6 @@ public class RadiomanAdvanced {
         } else
             this.currentStation = previousStation;
     }
-
 
     public int getMaxVolume() {
         return maxVolume;
@@ -105,12 +103,4 @@ public class RadiomanAdvanced {
             this.currentVolume = previousVolume;
     }
 
-
-    public boolean isOn() {
-        return on;
-    }
-
-    public void setOn(boolean on) {
-        this.on = on;
-    }
 }
