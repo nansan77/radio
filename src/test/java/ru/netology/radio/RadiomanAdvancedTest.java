@@ -10,9 +10,9 @@ public class RadiomanAdvancedTest {
     @Test
     public void setCurrentStation() {
         RadiomanAdvanced radiomenAdvanced = new RadiomanAdvanced();
-        radiomenAdvanced.setMaxStation(10);
+        radiomenAdvanced.setMaxStation(9);
         radiomenAdvanced.setMinStation(0);
-        radiomenAdvanced.setCurrentStation(11);
+        radiomenAdvanced.setCurrentStation(17);
         assertEquals(0, radiomenAdvanced.getCurrentStation());
     }
 
@@ -30,18 +30,10 @@ public class RadiomanAdvancedTest {
         RadiomanAdvanced radiomenAdvanced = new RadiomanAdvanced();
         radiomenAdvanced.setMaxStation(9);
         radiomenAdvanced.setMinStation(0);
-        radiomenAdvanced.setCurrentStation(-2);
+        radiomenAdvanced.setCurrentStation(-10);
         assertEquals(0, radiomenAdvanced.getCurrentStation());
     }
 
-    @Test
-    public void setCurrentStation4() {
-        RadiomanAdvanced radiomenAdvanced = new RadiomanAdvanced();
-        radiomenAdvanced.setMaxStation(10);
-        radiomenAdvanced.setMinStation(0);
-        radiomenAdvanced.setCurrentStation(1);
-        assertEquals(1, radiomenAdvanced.getCurrentStation());
-    }
 
     @Test
     public void setNextStation() {
@@ -70,7 +62,7 @@ public class RadiomanAdvancedTest {
         radiomenAdvanced.setMinStation(0);
         radiomenAdvanced.setCurrentStation(9);
         radiomenAdvanced.setNextStation();
-        assertEquals(9, radiomenAdvanced.getCurrentStation());
+        assertEquals(0, radiomenAdvanced.getCurrentStation());
     }
 
     @Test
@@ -80,7 +72,7 @@ public class RadiomanAdvancedTest {
         radiomenAdvanced.setMinStation(0);
         radiomenAdvanced.setCurrentStation(0);
         radiomenAdvanced.setPreviousStation();
-        assertEquals(0, radiomenAdvanced.getCurrentStation());
+        assertEquals(9, radiomenAdvanced.getCurrentStation());
     }
 
     @Test
@@ -126,7 +118,7 @@ public class RadiomanAdvancedTest {
         RadiomanAdvanced radiomenAdvanced = new RadiomanAdvanced();
         radiomenAdvanced.setMaxVolume(10);
         radiomenAdvanced.setMinVolume(0);
-        radiomenAdvanced.setCurrentVolume(20);
+        radiomenAdvanced.setCurrentVolume(-2);
         assertEquals(0, radiomenAdvanced.getCurrentVolume());
     }
 

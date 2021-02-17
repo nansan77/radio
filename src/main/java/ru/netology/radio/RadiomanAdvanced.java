@@ -10,7 +10,6 @@ public class RadiomanAdvanced {
     private int minVolume;
     private int currentVolume;
 
-
     public int getMaxStation() {
         return maxStation;
     }
@@ -44,7 +43,7 @@ public class RadiomanAdvanced {
     public void setNextStation() {
         int nextStation = currentStation + 1;
         if (nextStation > maxStation) {
-            return;
+            this.currentStation = minStation;
         } else
             this.currentStation = nextStation;
     }
@@ -52,7 +51,7 @@ public class RadiomanAdvanced {
     public void setPreviousStation() {
         int previousStation = currentStation - 1;
         if (previousStation < minStation) {
-            return;
+            this.currentStation = maxStation;
         } else
             this.currentStation = previousStation;
     }
@@ -101,6 +100,6 @@ public class RadiomanAdvanced {
             return;
         } else
             this.currentVolume = previousVolume;
-    }
 
+    }
 }
